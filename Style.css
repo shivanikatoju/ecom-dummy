@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner off1"
+    "banner banner off2"
+    "sm main main"
+    "recent main main"
+    "tags main main"
+    "footer footer footer";
+}
+
+.wrapper > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  background: blue;
+  color: white;
+  grid-area: h1;
+}
+
+header {
+  background: yellow;
+  grid-area: header;
+}
+
+.banner {
+  min-height: 20vh;
+  grid-area: banner;
+  /* background: linear-gradient(red, blue); top-bottom*/
+  /* background: linear-gradient(to left red, blue); */
+  /* background: linear-gradient(90deg, red, blue); */
+  background: linear-gradient(90deg, red 50%, blue);
+}
+
+.off1 {
+  background: olive;
+  color: aliceblue;
+  grid-area: off1;
+}
+
+.off2 {
+  background: chocolate;
+}
+
+.side-menu {
+  background: darkorange;
+  grid-area: sm;
+}
+
+.recent {
+  background: aqua;
+  grid-area: recent;
+}
+
+.tags {
+  background: violet;
+  grid-area: tags;
+}
+
+.main {
+  min-height: 20vh;
+  background: radial-gradient(orange 40%, blue);
+  grid-area: main;
+}
+
+.product1 {
+  grid-area: off2;
+}
+
+footer {
+  background: black;
+  color: aliceblue;
+  grid-area: footer;
+}
+
+/* ipad */
+@media (max-width: 550px) {
+  .wrapper {
+    grid-template-areas:
+      "h1 h1"
+      "header header"
+      "banner banner"
+      "off1 off2"
+      "sm sm"
+      "main main"
+      "recent tags"
+      "footer footer";
+  }
+}
+
+/* mobile */
+@media (min-width: 450px) {
+  .wrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-areas:
+      "h1"
+      "header"
+      "banner"
+      "off1"
+      "off2"
+      "sm"
+      "main"
+      "recent"
+      "off2"
+      "footer footer footer";
+  }
+}
